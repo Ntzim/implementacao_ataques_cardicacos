@@ -111,7 +111,7 @@ if escolha_do_indicadores == 'Pagina Inicial':
     st.write('''O Grupo laboratórial e hospitalar EinstenAlbert é uma instituição líder em saúde cardiovascular, 
     nosso sistema de previsão de ataques cardíacos representa a ponte entre ciência, medicina e tecnologia. 
     Utilizamos técnicas de aprendizado de máquina para prever ataques cardíacos e instruímos os pacientes a tomar medidas preventivas para ter uma vida mais saudável.''')
-    st.image('../4_scripts/EinsteinAlbert.png')
+    st.image('imagens/EinsteinAlbert.png')
 
 
 elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
