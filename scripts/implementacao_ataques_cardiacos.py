@@ -17,29 +17,6 @@ from sklearn.metrics import classification_report
 
 ######LOGOMARCA########
 
-# HTML e CSS para inserir uma imagem e ajustar seu tamanho
-st.markdown(
-    """
-    <style>
-    .logo {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 100px; /* Largura desejada */
-        height: auto; /* Altura ajustada automaticamente */
-        z-index: 1000;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Inserir a imagem desejada
-st.markdown(
-    '<img class="logo" src="../4_scripts/EinsteinAlbert.png" alt="Logo">',
-    unsafe_allow_html=True
-)
-
 
 
 #Titulo da Página 
@@ -143,7 +120,7 @@ if escolha_do_indicadores == 'Pagina Inicial':
     st.write('''O Grupo laboratórial e hospitalar EinstenAlbert é uma instituição líder em saúde cardiovascular, 
     nosso sistema de previsão de ataques cardíacos representa a ponte entre ciência, medicina e tecnologia. 
     Utilizamos técnicas de aprendizado de máquina para prever ataques cardíacos e instruímos os pacientes a tomar medidas preventivas para ter uma vida mais saudável.''')
-    st.image('../4_scripts/EinsteinAlbert.png')
+    st.image('../imagens/EinsteinAlbert.png')
 
 
 elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
