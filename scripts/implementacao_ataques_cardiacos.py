@@ -2,25 +2,15 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import joblib
+import plotly.express as px
 
 
 
 # Técnicas
 from sklearn.neighbors import KNeighborsClassifier as KNC
 
-# Validação cruzada
-from sklearn.model_selection import train_test_split, KFold, cross_val_score
-from sklearn.metrics import classification_report
 
 
-
-
-######LOGOMARCA########
-
-
-
-#Titulo da Página 
-st.title("Einstein Albert")
 
 #Home Page
 st.sidebar.header('Escolha uma pagina')
@@ -38,7 +28,6 @@ def get_user_data():
 
     #Input Nome Paciente
     user_input = st.sidebar.text_input("Nome do paciente")
-    st.write("Paciente:", user_input)
 
     # Input Idade
     age = st.sidebar.number_input("Idade", 18, 100, 25)
@@ -83,6 +72,7 @@ def get_user_data():
 
     # Criando dicionario de dados
     user_data = {
+        'Name':user_input,
         'Age': age,
         'Sex': sex,
         'ChestPainType': chest_pain_type,
@@ -109,23 +99,55 @@ def get_user_data():
 
 #IMPORTANDO MODELO
 
-modelo = joblib.load('modelo/modelo_treinado_knn.pk')
+modelo = joblib.load('../4_scripts/modelo_treinado_knn.pk')
 
 
 
 # CONDICIONAIS
 
 if escolha_do_indicadores == 'Pagina Inicial':
-    st.subheader('Bem-Vindo ao Sistema da Einstein Albert Labs')
+    st.markdown("<h1 style='color: red;'>Einsten Albert</h1>", unsafe_allow_html=True)
+    st.subheader('Bem-Vindo ao sistema da Einstein Albert Labs')
     st.write('''O Grupo laboratórial e hospitalar EinstenAlbert é uma instituição líder em saúde cardiovascular, 
     nosso sistema de previsão de ataques cardíacos representa a ponte entre ciência, medicina e tecnologia. 
     Utilizamos técnicas de aprendizado de máquina para prever ataques cardíacos e instruímos os pacientes a tomar medidas preventivas para ter uma vida mais saudável.''')
-    st.image('imagens/EinsteinAlbert.png')
+    st.image('../4_scripts/EinsteinAlbert.png')
 
 
 elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
-    
-    #
+
+    #SETANDO LOGO FIXA NO CANTO SUPERIOR DIREITO#
+
+    st.markdown(
+    """
+    <style>
+    .logo {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 100px; 
+        height: auto; 
+        z-index: 1000;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+    #BUSCANDO IMAGEM
+    st.markdown(
+    '<img class="logo" src="https://img.freepik.com/vetores-gratis/fundo-medico-de-coracao-vermelho-com-linha-de-batimento-cardiaco_1017-26835.jpg?w=740&t=st=1714257141~exp=1714257741~hmac=78c0ca8eb4a1f519ab1805a556c22ff53434f23b8845e8097959e6f985edf64b " alt="Logo">',
+    unsafe_allow_html=True
+    )
+
+
+
+    #TITULO
+    st.subheader('Sistema de Previsão de Ataques Cardiacos')
+    st.write('Com base nos resultados do exame, nosso sistema preve ataques cardiacos')
+
+    #DESCRIÇÃO
+    st.write('Após preencher todos os dados, clique no botão abaixo para gerar o resultado')
 
     #CHAMANDO FUNÇÃO
     df = get_user_data()
@@ -195,13 +217,32 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     #PREVISÃO
     previsão = modelo.predict(df[variaveis_selecionadas])
 
+    
+    #SETANDO VARIAVEIS PARA PLOTAR TABELA
+    colunas = [
+    'Name',
+    'Age',
+    'Sex',
+    'ChestPainType',
+    'RestingBP',
+    'Cholesterol',
+    'FastingBS',
+    'RestingECG',
+    'MaxHR',
+    'ExerciseAngina',
+    'Oldpeak',
+    'ST_Slope'
+        ]
+
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
     if st.button("Gerar Resultado"):
-        st.write('De acordo com nosso modelo',previsão)
+        st.subheader('Resultado')
         if previsão == 1 :
-            st.write('Muito Provavelmente você tera um ataque cardiaco')
+            st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante tomar medidas preventivas imediatas para proteger sua saúde cardiovascular. Recomendamos agendar uma consulta médica o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
+            st.table(df[colunas])
         else:
-            st.write('Parabéns, seus exames estão bons e você não terá um ataque cardiaco')
+            st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde. Lembre-se de que a prevenção é fundamental para um coração saudável a longo prazo.')
+            st.table(df[colunas])
 
 
 
