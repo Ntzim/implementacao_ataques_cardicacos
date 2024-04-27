@@ -144,7 +144,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     #TITULO
     st.subheader('Sistema de Previsão de Ataques Cardiacos')
-    st.write('"Nossa plataforma analisa cuidadosamente os dados do exame para prever possíveis ataques cardíacos. Com base nos resultados, fornecemos uma avaliação precisa do risco de ataque cardiaco. Sua saúde é nossa prioridade, e estamos aqui para oferecer orientações para a prevenção e o cuidado."')
+    st.write('Nossa plataforma analisa cuidadosamente os dados do exame para prever possíveis ataques cardíacos. Com base nos resultados, fornecemos uma avaliação precisa do risco de ataque cardiaco. Sua saúde é nossa prioridade, e estamos aqui para oferecer orientações para a prevenção e o cuidado.')
 
     #DESCRIÇÃO
     st.write('Após fornecer todas as informações necessárias, clique no botão abaixo para gerar seu resultado personalizado.')
