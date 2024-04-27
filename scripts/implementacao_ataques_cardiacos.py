@@ -197,7 +197,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
     if st.button("Gerar Resultado"):
-        st.write('De acordo como nosso modelo',previsão)
+        st.write('De acordo com nosso modelo',previsão)
         if previsão == 1 :
             st.write('Muito Provavelmente você tera um ataque cardiaco')
         else:
