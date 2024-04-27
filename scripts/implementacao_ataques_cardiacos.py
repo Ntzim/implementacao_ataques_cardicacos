@@ -123,7 +123,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     <style>
     .logo {
         position: fixed;
-        top: 10px;
+        top: 70px;
         right: 10px;
         width: 100px; 
         height: auto; 
