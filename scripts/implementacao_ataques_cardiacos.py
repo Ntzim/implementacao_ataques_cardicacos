@@ -136,7 +136,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     #BUSCANDO IMAGEM
     st.markdown(
-    '<img class="logo" src="https://img.freepik.com/vetores-gratis/fundo-medico-de-coracao-vermelho-com-linha-de-batimento-cardiaco_1017-26835.jpg?w=740&t=st=1714257141~exp=1714257741~hmac=78c0ca8eb4a1f519ab1805a556c22ff53434f23b8845e8097959e6f985edf64b " alt="Logo">',
+    '<img class="logo" src="https://static.vecteezy.com/ti/vetor-gratis/p3/509347-logotipo-para-uma-ilustracao-em-clinica-cardio-vetor.jpg" alt="Logo">',
     unsafe_allow_html=True
     )
 
