@@ -217,6 +217,9 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     #PREVISÃO
     previsão = modelo.predict(df[variaveis_selecionadas])
 
+    #INSERINDO PREVISÂO NO DF
+
+    df['Previsão'] = previsão
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
@@ -237,7 +240,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
     if st.button("Gerar Resultado"):
         if previsão == 1 :
-            st.subheader('Resultado ⚰️')
+            st.subheader('Resultado - ‼️‼️')
             st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante tomar medidas preventivas imediatas para proteger sua saúde cardiovascular. Recomendamos agendar uma consulta médica o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
             st.table(df[colunas])
         else:
