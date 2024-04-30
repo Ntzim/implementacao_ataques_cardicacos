@@ -218,7 +218,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     previsão = modelo.predict(df[variaveis_selecionadas])
 
     #INSERINDO PREVISÂO NO DF
-
+    df ['Resultado'] = previsão
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
