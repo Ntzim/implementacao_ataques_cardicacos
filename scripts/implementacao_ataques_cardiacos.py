@@ -233,7 +233,8 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     'MaxHR',
     'ExerciseAngina',
     'Oldpeak',
-    'ST_Slope'
+    'ST_Slope',
+    'Resultado'
         ]
 
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
