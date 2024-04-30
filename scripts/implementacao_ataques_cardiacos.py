@@ -241,11 +241,11 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     if st.button("Gerar Resultado"):
         if previsão == 1 :
             st.subheader('Resultado - 🚑❤️‍🩹')
-            st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante tomar medidas preventivas imediatas para proteger sua saúde cardiovascular. Recomendamos agendar uma consulta médica o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
+            st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante recomendar ao paciente medidas preventivas. Recomendamos agendar uma consulta médica para paciente o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
             st.table(df[colunas])
         else:
             st.subheader('Resultado - 😀🎉')
-            st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde. Lembre-se de que a prevenção é fundamental para um coração saudável a longo prazo.')
+            st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial recomendar ao paciente continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde.')
             st.table(df[colunas])
 
 
