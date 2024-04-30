@@ -219,7 +219,6 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     #INSERINDO PREVISÂO NO DF
 
-    df['Previsão'] = previsão
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
