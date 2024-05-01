@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import joblib
+import mysql.connector
 
 
 
@@ -270,7 +271,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
     if st.button("Gerar Resultado"):
         #SALVANDO DADOS NO BANCO
-        #save_to_mysql(df)
+        save_to_mysql(df)
         if previsão == 1 :
             st.subheader('Resultado - 🚑❤️‍🩹')
             st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante recomendar ao paciente medidas preventivas. Recomendamos agendar uma consulta médica para paciente o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
