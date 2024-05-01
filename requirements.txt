@@ -2,4 +2,4 @@ streamlit
 pandas
 scikit-learn
 joblib
-mysql-connector-python == 3.8
+mysql-connector-python == '3.8'
