@@ -122,7 +122,7 @@ def save_to_mysql(data):
 
         st.success("Dados salvos no banco de dados com sucesso!")
 
-     except mysql.connector.Error as error:
+    except mysql.connector.Error as error:
         st.error(f"Erro ao salvar os dados no banco de dados: {error}")
 
 
