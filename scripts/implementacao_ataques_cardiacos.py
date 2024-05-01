@@ -269,7 +269,6 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
     if st.button("Gerar Resultado"):
-        save_to_mysql(df[colunas])
         if previsão == 1 :
             st.subheader('Resultado - 🚑❤️‍🩹')
             st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante recomendar ao paciente medidas preventivas. Recomendamos agendar uma consulta médica para paciente o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
