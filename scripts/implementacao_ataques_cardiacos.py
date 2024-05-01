@@ -93,7 +93,37 @@ def get_user_data():
 
 
 
-#PRÉ-PROCESSAMENTO DOS DADOS##
+#FUNÇÃO SALVA DADOS NO BANCO
+def save_to_mysql(data):
+    # Configurações de conexão com o banco de dados
+    config = {
+        'user': 'admin',
+        'password': 'grupo123#',
+        'host': 'project.cdyci0i4soya.us-east-1.rds.amazonaws.com',
+        'database': 'Projeto',
+        'raise_on_warnings': True
+    }
+
+    # Conectar ao banco de dados
+    try:
+        connection = mysql.connector.connect(**config)
+        cursor = connection.cursor()
+
+        # Inserir os dados no banco de dados
+        for index, row in data.iterrows():
+            sql = "INSERT INTO dados_pacientes (Name, Age, Sex, ChestPainType, RestingBP, Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina, Oldpeak, ST_Slope, Resultado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            values = tuple(row)
+            cursor.execute(sql, values)
+
+        # Commit e fechar conexão
+        connection.commit()
+        cursor.close()
+        connection.close()
+
+        st.success("Dados salvos no banco de dados com sucesso!")
+
+    except mysql.connector.Error as error:
+        st.error(f"Erro ao salvar os dados no banco de dados: {error}")
 
 
 
