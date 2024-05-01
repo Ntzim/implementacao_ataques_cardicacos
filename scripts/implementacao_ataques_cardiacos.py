@@ -97,9 +97,10 @@ def get_user_data():
 #FUNÇÃO SALVA DADOS NO BANCO
 def save_to_mysql(data):
     # Configurações de conexão com o banco de dados
+    #USUARIO SÓ FAZ SELECT E INSERT
     config = {
-        'user': 'admin',
-        'password': 'grupo123#',
+        'user': 'user',
+        'password': 'labs123#',
         'host': 'project.cdyci0i4soya.us-east-1.rds.amazonaws.com',
         'database': 'Projeto',
         'raise_on_warnings': True
