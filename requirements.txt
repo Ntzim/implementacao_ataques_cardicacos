@@ -1,4 +1,4 @@
 pandas
 scikit-learn
 joblib
-mysql-connector-python@v8.0.26
+mysql-connector-python
