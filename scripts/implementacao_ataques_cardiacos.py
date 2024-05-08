@@ -249,8 +249,13 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     #PREVISÃO
     previsão = modelo.predict_proba(df[variaveis_selecionadas])[:,1]*100
 
+    
+    
+    prev_arred = int(previsao*100)/100.0
+    
+    
     #INSERINDO PREVISÂO NO DF
-    df ['Resultado'] = previsão
+    df ['Resultado'] = prev_arred
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
@@ -276,13 +281,13 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         #GERANDO RESULTADOS
         if previsão <=40 :
             # st.subheader('Resultado')
-            st.write(f'{previsão:.2f}')
+            st.write(prev_arred)
             st.table(df[colunas])
         elif previsão <=60:
-            st.write(previsão)
+            st.write(prev_arred)
             st.table(df[colunas])
         elif previsão <=80:
-            st.write(previsão)
+            st.write(prev_arred)
             st.table(df[colunas])
         else:
             # st.subheader('Resultado - 😀🎉')
