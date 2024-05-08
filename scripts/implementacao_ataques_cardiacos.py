@@ -251,7 +251,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
     
     
-    prev_arred = int(previsao*100)/100.0
+    prev_arred = int(previsão*100)/100.0
     
     
     #INSERINDO PREVISÂO NO DF
