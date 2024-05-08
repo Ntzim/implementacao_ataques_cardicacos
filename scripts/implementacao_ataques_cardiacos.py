@@ -255,7 +255,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     
     
     #INSERINDO PREVISÂO NO DF
-    df ['Resultado'] = prev_arred
+    df ['Resultado'] = previsão    
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
