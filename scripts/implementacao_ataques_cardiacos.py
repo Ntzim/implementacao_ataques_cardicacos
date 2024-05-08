@@ -8,7 +8,7 @@ import mysql.connector
 
 
 # Técnicas
-from sklearn.neighbors import KNeighborsClassifier as KNC
+from sklearn.linear_model import LogisticRegression as LGR
 
 
 
@@ -131,7 +131,7 @@ def save_to_mysql(data):
 
 #IMPORTANDO MODELO
 
-modelo = joblib.load('modelo/modelo_treinado_knn.pk')
+modelo = joblib.load('modelo/modelo_treinado_logr.pk')
 
 
 
@@ -247,7 +247,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
 
 
     #PREVISÃO
-    previsão = modelo.predict(df[variaveis_selecionadas])
+    previsão = modelo.predict_proba(df[variaveis_selecionadas])[:,1]*100
 
     #INSERINDO PREVISÂO NO DF
     df ['Resultado'] = previsão
@@ -274,13 +274,19 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         #SALVANDO DADOS NO BANCO
         save_to_mysql(df[colunas])
         #GERANDO RESULTADOS
-        if previsão == 1 :
-            st.subheader('Resultado - 🚑❤️‍🩹')
-            st.write("De acordo com a análise do nosso modelo, há uma probabilidade de ocorrer um evento cardíaco adverso. É importante recomendar ao paciente medidas preventivas. Recomendamos agendar uma consulta médica para paciente o mais breve possível para uma avaliação mais detalhada e elaboração de um plano de cuidados personalizado.")
+        if previsão <=40 :
+            # st.subheader('Resultado')
+            st.write(previsão)
+            st.table(df[colunas])
+        elif previsão <=60:
+            st.write(previsão)
+            st.table(df[colunas])
+        elif previsão <=80:
+            st.write(previsão)
             st.table(df[colunas])
         else:
-            st.subheader('Resultado - 😀🎉')
-            st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial recomendar ao paciente continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde.')
+            # st.subheader('Resultado - 😀🎉')
+            # st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial recomendar ao paciente continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde.')
             st.table(df[colunas])
 
 
