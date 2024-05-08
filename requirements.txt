@@ -1,6 +1,5 @@
-streamlit
 pandas
 scikit-learn
 joblib
-mysql
-
+git+https://github.com/mysql/mysql-connector-python@v8.0.26
+mysql-connector-python@v8.0.26
