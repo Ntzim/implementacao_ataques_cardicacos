@@ -250,7 +250,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
     previsão = modelo.predict_proba(df[variaveis_selecionadas])[:,1]*100
 
     #INSERINDO PREVISÂO NO DF
-    df ['Resultado'] = previsão
+    df ['Resultado'] = round(previsão,2)
     
     #SETANDO VARIAVEIS PARA PLOTAR TABELA
     colunas = [
