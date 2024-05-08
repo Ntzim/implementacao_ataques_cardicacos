@@ -276,7 +276,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         #GERANDO RESULTADOS
         if previsão <=40 :
             # st.subheader('Resultado')
-            st.write(previsão)
+            st.write(f'{previsão:.2f}')
             st.table(df[colunas])
         elif previsão <=60:
             st.write(previsão)
