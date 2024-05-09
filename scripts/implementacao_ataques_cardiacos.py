@@ -281,7 +281,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         #GERANDO RESULTADOS
         if previsão <=40 :
             # st.subheader('Resultado')
-            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
+            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred:.2f}%')
             st.table(df[colunas])
         elif previsão <=60:
             st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
