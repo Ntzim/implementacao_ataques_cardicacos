@@ -281,16 +281,16 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         #GERANDO RESULTADOS
         if previsão <=40 :
             # st.subheader('Resultado')
-            st.write(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
+            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
             st.table(df[colunas])
         elif previsão <=60:
-            st.write(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
+            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
             st.table(df[colunas])
         elif previsão <=80:
-            st.write(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
+            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
             st.table(df[colunas])
         else:
-            st.write(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
+            st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
             # st.subheader('Resultado - 😀🎉')
             # st.write('Ficamos felizes em informar que, com base na avaliação do nosso modelo, não há indicação de risco iminente de ataque cardíaco. No entanto, é essencial recomendar ao paciente continuar com hábitos saudáveis, como alimentação balanceada, exercícios regulares e consultas médicas de rotina, para manter sua saúde.')
             st.table(df[colunas])
