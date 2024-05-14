@@ -299,7 +299,7 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
             st.subheader(f'O seu risco de sofrer um ataque cardiaco é de {prev_arred}%')
             st.write('''**O paciente apresenta uma probabilidade significativa de eventos cardiovasculares adversos.** 
                         Encaminhamento urgente para um especialista em cardiologia é altamente recomendado. 
-                        Serão necessários testes mais específicos e intervenções terapêuticas agressivas para gerenciar esse risco elevado.''')
+                        Serão necessários exames mais específicos e intervenções medicas agressivas para gerenciar esse risco elevado.''')
             st.table(df[colunas])
         else:
             st.title('Probabilidade Muito Alta:')
