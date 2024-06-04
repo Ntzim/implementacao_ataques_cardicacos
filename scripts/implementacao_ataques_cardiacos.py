@@ -275,44 +275,44 @@ elif escolha_do_indicadores == 'Previsão de Ataques Cardiacos':
         ]
 
     #SETANDO CODICIONAIS PARA GERAR RESULTADO
-    if st.button("Gerar Resultado"):
-        #SALVANDO DADOS NO BANCO
-        save_to_mysql(df[colunas])
-        #GERANDO RESULTADOS
-        if previsão <=20 :
-            st.title('Baixissima Probabilidade')
-            st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
-            st.write('''**O paciente apresenta uma Baixissima probabilidade de sofrer um ataque cardiaco**. Recomenda-se continuar com hábitos saudáveis e monitorar 
+if st.button("Gerar Resultado"):
+    #SALVANDO DADOS NO BANCO
+    save_to_mysql(df[colunas])
+    #GERANDO RESULTADOS
+    if previsão <=20 :
+        st.title('Baixissima Probabilidade')
+        st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
+        st.write('''**O paciente apresenta uma Baixissima probabilidade de sofrer um ataque cardiaco**. Recomenda-se continuar com hábitos saudáveis e monitorar 
                         regularmente os fatores de risco. 
                         Hábitos preventivas podem ser mantidas para manter o paciente nesta faixa de baixo risco.''')
-            st.table(df[colunas])
-        elif previsão <=40:
-            st.title('Baixa probabilidade ')
-            st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
-            st.write('''**O paciente demonstra uma baixa probabilidade de sofrer um ataque cardiaco.** 
+        st.table(df[colunas])
+    elif previsão <=40:
+        st.title('Baixa probabilidade ')
+        st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
+        st.write('''**O paciente demonstra uma baixa probabilidade de sofrer um ataque cardiaco.** 
                         Recomenda-se realizar avaliações mais detalhadas, incluindo exames diagnósticos adicionais e avaliação clínica abrangente. 
                         Considerar a prescrição de terapias medicamentosas e/ou modificações no estilo de vida para mitigar os fatores de risco identificados.''')
-            st.table(df[colunas])
-        elif previsão <=60:
-            st.title('Média Probabilidade (ATENÇÂO)')
-            st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
-            st.write('''**O paciente apresenta uma  média probabilidade  de sofrer um ataque cardiaco.** 
+        st.table(df[colunas])
+    elif previsão <=60:
+        st.title('Média Probabilidade (ATENÇÂO)')
+        st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
+        st.write('''**O paciente apresenta uma  média probabilidade  de sofrer um ataque cardiaco.** 
                         Encaminhamento para um especialista em cardiologia é altamente recomendado. 
                         Serão necessários testes mais específicos e intervenções terapêuticas para gerenciar esse risco.''')
-            st.table(df[colunas])
-        elif previsão <=80:
-             st.title('Alta Probabilidade')
-            st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
-            st.write('''**O paciente apresenta uma  alta probabilidade de sofrer um ataque cardiaco.** 
+        st.table(df[colunas])
+    elif previsão <=80:
+        st.title('Alta Probabilidade')
+        st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
+        st.write('''**O paciente apresenta uma  alta probabilidade de sofrer um ataque cardiaco.** 
                         Encaminhamento urgente para um especialista em cardiologia é altamente recomendado. 
                         Serão necessários testes mais específicos e intervenções terapêuticas agressivas para gerenciar esse risco elevado.''')
-        else:
-            st.title('Altissima Probabilidade')
-            st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
-            st.write('''**A probabilidade de eventos cardiovasculares graves é extremamente alta neste paciente.**
+    else:
+        st.title('Altissima Probabilidade')
+        st.subheader(f'O risco do paciente sofrer um ataque cardiaco é de {prev_arred}%')
+        st.write('''**A probabilidade de eventos cardiovasculares graves é extremamente alta neste paciente.**
                         Encaminhamento imediato e tratamento urgente por um especialista em cardiologia são imperativos. 
                         Ações rápidas e decisivas são essenciais para evitar complicações graves e potencialmente fatais.''')
-            st.table(df[colunas])
+        st.table(df[colunas])
 
 
 
