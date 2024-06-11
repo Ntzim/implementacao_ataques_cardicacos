@@ -99,9 +99,9 @@ def save_to_mysql(data):
     # Configurações de conexão com o banco de dados
     #USUARIO SÓ FAZ SELECT E INSERT
     config = {
-        'user': 'user',
-        'password': 'labs123#',
-        'host': 'project.cdyci0i4soya.us-east-1.rds.amazonaws.com',
+        'user': USER,
+        'password': PASSWORD,
+        'host': HOST,
         'database': 'Projeto',
         'raise_on_warnings': True
     }
