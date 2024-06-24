@@ -99,7 +99,7 @@ def save_to_mysql(data):
     # Configurações de conexão com o banco de dados
     #USUARIO SÓ FAZ SELECT E INSERT
     config = {
-        'user': USER,
+        'user': "user",
         'password': PASSWORD,
         'host': HOST,
         'database': 'Projeto',
