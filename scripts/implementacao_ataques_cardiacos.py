@@ -100,8 +100,8 @@ def save_to_mysql(data):
     #USUARIO SÓ FAZ SELECT E INSERT
     config = {
         'user': "user",
-        'password': "labs123#",
-        'host': "project.cdyci0i4soya.us-east-1.rds.amazonaws.com",
+        'password': "l#######",
+        'host': "project.########.#######us-east-1.rds.amazonaws.com",
         'database': 'Projeto',
         'raise_on_warnings': True
     }
